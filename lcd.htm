@@ -3,7 +3,7 @@
 <title>Static Call Graph - [D:\Karthik\ARM\LPC2148\weigand\LCD_lib\lcd.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image D:\Karthik\ARM\LPC2148\weigand\LCD_lib\lcd.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 4.1 [Build 894]: Last Updated: Sat Sep 17 17:48:31 2016
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 4.1 [Build 894]: Last Updated: Sat Sep 17 18:12:17 2016
 <BR><P>
 <H3>Maximum Stack Usage =         32 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -189,8 +189,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[1d]"></a>Delays</STRONG> (ARM, 40 bytes, Stack size 0 bytes, lcd.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_lcd
+<BR><BR>[Called By]<UL><LI><a href="#[22]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_lcd
 <LI><a href="#[1c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_write
 </UL>
 
@@ -243,7 +242,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b]"></a>main</STRONG> (ARM, 388 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[b]"></a>main</STRONG> (ARM, 688 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = main &rArr; lcd_str &rArr; lcd_data &rArr; lcd_write
 </UL>
 <BR>[Calls]<UL><LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_idivmod
@@ -252,7 +251,6 @@ Global Symbols
 <LI><a href="#[21]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_cmd
 <LI><a href="#[20]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_str
 <LI><a href="#[1f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lcd_data
-<LI><a href="#[1d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Delays
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> rtentry2.o(.ARM.Collect$$rtentry$$0000000D)
 </UL>

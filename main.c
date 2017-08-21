@@ -12,7 +12,9 @@ extern volatile char dataready;
 int main(void)
 {
 	
+	int id= 0;
 	init_lcd();
+
 
  	lcd_cmd(FIRST_LINE_POS0);
 	lcd_str("Hello Easy ARM ");
@@ -32,37 +34,39 @@ int main(void)
 			 lcd_data(0x30+count);
 			 lcd_data(':');
 			 lcd_data(' ');
-
-		     for(j=0;j<13;j++)
-	   		{
-				lcd_data(data[j]);
-	   		}				
-	  		 
+ 	  		 
 			 if(weigandsize ==26)
 			 {
-				 lcd_cmd(0xc0);
-				 for(j=13;j<weigandsize;j++)
-		  		 {
-					lcd_data(data[j]);
-	
-		  		 } 
-			 } 
+					id =0;
+					for(j=9;j<=24;j++)
+					{
+
+					id =   (id<<1) |   (data[j]-'0'); 	
+
+					}
+					lcd_data(0x30+(id/10000));
+					lcd_data(0x30+((id/1000)%10));
+					lcd_data(0x30+((id/100)%10));
+					lcd_data(0x30+((id/10)%10));
+				    lcd_data(0x30+(id%10));
+
+
+ 			 } 
 			 else if(weigandsize == 37)
 			 {
-				 lcd_cmd(0xc0);
-				 for(j=13;j<29;j++)
-		  		 {
-					lcd_data(data[j]);
-	
-		  		 } 
-				 Delays(10000);
-				 lcd_cmd(0x01);
-				 for(j=29;j<weigandsize;j++)
-		  		 {
-					lcd_data(data[j]);
-	
-		  		 }
+					id =0;
+					for(j=17;j<=35;j++)
+					{
 
+					id =   (id<<1) |   (data[j]-'0'); 	
+
+					}
+					lcd_data(0x30+(id/10000));
+					lcd_data(0x30+((id/1000)%10));
+					lcd_data(0x30+((id/100)%10));
+					lcd_data(0x30+((id/10)%10));
+				    lcd_data(0x30+(id%10));
+ 
 
 			 }
 			 dataready = 0;
